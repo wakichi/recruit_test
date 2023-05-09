@@ -6,13 +6,14 @@ databases:
     plan: free
 
 services:
-  - type: web
+  - type: worker
     name: mysite
     env: python
     region: singapore
     plan: free
     branch: main
     healthCheckPath: /
+    rootDir: django_rest_framework
     buildCommand: "./build.sh"
     startCommand: "gunicorn django_rest_framework_test.wsgi --log-file -"
     envVars:
