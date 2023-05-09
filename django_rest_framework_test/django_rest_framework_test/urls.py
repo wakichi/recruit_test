@@ -19,6 +19,5 @@ from django.contrib import admin
 
 urlpatterns = [
     path(r'admin/', admin.site.urls),
-    # blog.urlsをincludeする
-    path(r'api/', include("restAPI.urls")),
+    path(r'/', include("restAPI.urls")),
 ]
